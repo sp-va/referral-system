@@ -5,7 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from src.db.config import settings
+from db.config import settings
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -25,7 +25,7 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from src.core.models.users import User
+from core.models.users import User
 
 target_metadata = [User.metadata]
 
@@ -88,7 +88,7 @@ def run_migrations_offline() -> None:
 
 import asyncio
 
-from src.db.base import async_engine
+from db.base import async_engine
 
 
 def run_migrations_online():
